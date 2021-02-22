@@ -1,0 +1,20 @@
+
+S	java:S1065"9Replace this use of System.out or System.err by a logger.(ü¾óžûÿÿÿÿ
+S	java:S106<"9Replace this use of System.out or System.err by a logger.(®®î¯ÿÿÿÿÿ
+N	java:S1063"9Replace this use of System.out or System.err by a logger.(§œÆ‚
+[
+java:S1192"FDefine a constant instead of duplicating this literal "Tiger" 3 times.(‘µ
+N	java:S1064"9Replace this use of System.out or System.err by a logger.(¾¾õÉ
+N	java:S106:"9Replace this use of System.out or System.err by a logger.( Åâ³
+b
+java:S1192"GDefine a constant instead of duplicating this literal "Salman" 5 times.(Œ›¦³þÿÿÿÿ
+S	java:S106?"9Replace this use of System.out or System.err by a logger.(šë¢þýÿÿÿÿ
+[
+java:S1192"FDefine a constant instead of duplicating this literal "Drama" 4 times.(™æ S
+S	java:S106>"9Replace this use of System.out or System.err by a logger.(›¼”¾þÿÿÿÿ
+c
+java:S1192"HDefine a constant instead of duplicating this literal "Deepika" 5 times.(ÐïÏâøÿÿÿÿ
+S	java:S1067"9Replace this use of System.out or System.err by a logger.(íˆ›óüÿÿÿÿ
+^
+java:S1192"IDefine a constant instead of duplicating this literal "Padmavat" 4 times.(™æ S
+]	java:S125C"<This block of commented-out lines of code should be removed.(ËÚôþúÿÿÿÿ8—Âõ¿ü.

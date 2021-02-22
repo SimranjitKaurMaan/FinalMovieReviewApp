@@ -1,0 +1,31 @@
+
+_
+/src/com/company/abstractions/IMovieService.java,4\2\428d2098b6744483626eb24e0f5ac6a45d73125d
+`
+0src/com/company/abstractions/IReviewService.java,c\8\c890ae2df57f715ed99baf619d452aa66eeefa5d
+^
+.src/com/company/abstractions/IUserService.java,6\2\6269bfb3364f6439f5283b4739b140da25700aef
+W
+'src/com/company/datacontract/Genre.java,4\3\43cd244d6c8c363ae18647d94c9853e55626129d
+Z
+*src/com/company/datacontract/UserType.java,f\2\f24f71e720c0eb09197fbbb870bd73fbf4b85663
+Q
+!src/com/company/models/Movie.java,6\d\6d30ed9dc68628e973d628af0e3246d9ed19bcdb
+P
+ src/com/company/models/User.java,b\8\b8722e3a494e1733d2da9d512ef2fab2a0f42e1e
+^
+.src/com/company/exception/ReviewException.java,a\c\aca1a2c680281a999c31d1d059bcb2dce5c1e1d7
+R
+"src/com/company/utilities/Arg.java,4\4\448ac8ff8c71db3d2d43d79ab0b49dfbb3430d9a
+Z
+*src/com/company/services/MovieService.java,1\a\1acf444076c47fd064c508dbacff80f7b29dcd84
+Y
+)src/com/company/services/UserService.java,e\b\ebb19f616deacb1826b006c0cd7b2bd6ed816cdc
+[
++src/com/company/services/ReviewService.java,8\1\815d1c7f458351027f7136f93b010fb19c2ef884
+T
+$src/com/company/handler/Handler.java,f\a\faba62f3e3e4bd9c6eab90ee79d45de3801e7c3d
+9
+	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
+I
+src/com/company/Main.java,4\a\4a831b10439099d44774d0ccc387e808deffaeab
