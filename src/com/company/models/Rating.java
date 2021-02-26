@@ -24,7 +24,8 @@ public class Rating
         return this.criticScore;
     }
 
-    public void setRating(int score,UserType userType) throws ReviewException {
+    public void setRating(int score,UserType userType) throws ReviewException
+    {
         if(score< RATING_LOWER_BOUND || score> RATING_UPPER_BOUND)
         {
             throw new ReviewException("The rating cannot be outside of range "+ RATING_LOWER_BOUND +"-"+ RATING_UPPER_BOUND +".");

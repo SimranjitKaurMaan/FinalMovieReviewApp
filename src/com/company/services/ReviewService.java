@@ -18,6 +18,8 @@ import java.util.stream.Collectors;
 
 public class ReviewService implements IReviewService
 {
+    private final int UPGRADE_USER_TO_CRITIC_VALUE = 3;
+
     private IUserService userService;
 
     private IMovieService movieService;
@@ -64,7 +66,7 @@ public class ReviewService implements IReviewService
         User user = users.get(userName);
         user.setReviewGiven(movieName);
         Integer reviewCount = user.getReviewCount();
-        if (reviewCount > 3)
+        if (reviewCount > UPGRADE_USER_TO_CRITIC_VALUE)
         { user.setUserType(UserType.CRITIC); }
 
         this.movieService.getMovies().get(movieName).setReviewScore(movieRating, user.getUserType());

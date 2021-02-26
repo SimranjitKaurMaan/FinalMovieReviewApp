@@ -1,3 +1,6 @@
 
 „
-java:S1488¬"fImmediately return this expression instead of assigning it to the temporary variable "filteredMovies".(¦±¼Ÿ8µ–Æ¾ü.
+java:S1488•"fImmediately return this expression instead of assigning it to the temporary variable "filteredMovies".(¦±¼Ÿ8µ–Æ¾ü.
+ƒ	java:S116"gRename this field "UPGRADE_USER_TO_CRITIC_VALUE" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(á¢Ü½8”Ëõı.
+>
+java:S1170"!Make this final field static too.(á¢Ü½8”Ëõı.

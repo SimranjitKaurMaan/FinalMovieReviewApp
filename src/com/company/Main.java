@@ -1,5 +1,6 @@
 package com.company;
 
+import com.company.exception.ReviewException;
 import com.company.handler.Handler;
 import com.company.helper.Helper;
 import com.company.services.MovieService;
@@ -35,7 +36,7 @@ public class Main {
                     movieService.addMovie("Metro", 2006, Arrays.asList("Romance"));
                     movieService.addMovie("Harry Potter", 2001, Arrays.asList("Comedy"));
 
-                    ReviewService reviewService = Helper.createReviewService(userService,movieService);
+                    ReviewService reviewService = Helper.createReviewService(userService, movieService);
                     reviewService.addReview("SRK", "Don", 2);
                     reviewService.addReview("SRK", "Padmavat", 8);
                     reviewService.addReview("SRK", "Tiger", 5);
@@ -73,9 +74,21 @@ public class Main {
                     //reviewService.addReview("Salman", "LunchBox", 9);
                     //Double reviewScoreByInvalidYear = reviewService.getAverageReviewScoreByYear(2021);
                     //List<String> topInvalidCountMovies = reviewService.getTopMoviesByCriticsByGenre("Drama", 20);
-            } catch (Exception ex)
+            } catch (IllegalArgumentException ex)
             {
-                    System.out.println("Exception: "+ex);
+                    System.out.println("Exception1: "+ex);
+            }
+            catch (NullPointerException ex)
+            {
+                    System.out.println("Exception2: "+ex);
+
+            }catch (ReviewException ex)
+            {
+                    System.out.println("Exception3: "+ex);
+            }
+            catch(Exception ex)
+            {
+                    System.out.println("Exception4: "+ex);
             }
     }
 }

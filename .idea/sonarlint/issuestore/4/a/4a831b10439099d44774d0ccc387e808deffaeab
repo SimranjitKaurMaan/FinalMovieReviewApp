@@ -1,20 +1,21 @@
 
-S	java:S106?"9Replace this use of System.out or System.err by a logger.(šë¢þýÿÿÿÿ
-]	java:S125C"<This block of commented-out lines of code should be removed.(ËÚôþúÿÿÿÿ8—Âõ¿ü.
-N	java:S1063"9Replace this use of System.out or System.err by a logger.(§œÆ‚
-S	java:S1065"9Replace this use of System.out or System.err by a logger.(ü¾óžûÿÿÿÿ
-N	java:S106:"9Replace this use of System.out or System.err by a logger.( Åâ³
-S	java:S1067"9Replace this use of System.out or System.err by a logger.(íˆ›óüÿÿÿÿ
-S	java:S106<"9Replace this use of System.out or System.err by a logger.(®®î¯ÿÿÿÿÿ
 [
-java:S1192"FDefine a constant instead of duplicating this literal "Tiger" 3 times.(‘µ
-S	java:S106>"9Replace this use of System.out or System.err by a logger.(›¼”¾þÿÿÿÿ
-b
-java:S1192"GDefine a constant instead of duplicating this literal "Salman" 5 times.(Œ›¦³þÿÿÿÿ
+java:S1192 "FDefine a constant instead of duplicating this literal "Drama" 4 times.(™æ S
 [
-java:S1192"FDefine a constant instead of duplicating this literal "Drama" 4 times.(™æ S
-N	java:S1064"9Replace this use of System.out or System.err by a logger.(¾¾õÉ
-^
-java:S1192"IDefine a constant instead of duplicating this literal "Padmavat" 4 times.(™æ S
+java:S1192"FDefine a constant instead of duplicating this literal "Tiger" 3 times.(‘µ
+S	java:S1066"9Replace this use of System.out or System.err by a logger.(ü¾óžûÿÿÿÿ
+S	java:S1068"9Replace this use of System.out or System.err by a logger.(íˆ›óüÿÿÿÿ
+Z	java:S106N"9Replace this use of System.out or System.err by a logger.(“ŽÔ¦ûÿÿÿÿ8•»Ýý.
 c
-java:S1192"HDefine a constant instead of duplicating this literal "Deepika" 5 times.(ÐïÏâøÿÿÿÿ
+java:S1192"HDefine a constant instead of duplicating this literal "Deepika" 5 times.(ÐïÏâøÿÿÿÿ
+S	java:S106>"9Replace this use of System.out or System.err by a logger.(›¼”¾þÿÿÿÿ
+S	java:S106<"9Replace this use of System.out or System.err by a logger.(®®î¯ÿÿÿÿÿ
+b
+java:S1192"GDefine a constant instead of duplicating this literal "Salman" 5 times.(Œ›¦³þÿÿÿÿ
+S	java:S1065"9Replace this use of System.out or System.err by a logger.(ÅÚÇ…ùÿÿÿÿ
+N	java:S106:"9Replace this use of System.out or System.err by a logger.( Åâ³
+^
+java:S1192 "IDefine a constant instead of duplicating this literal "Padmavat" 4 times.(™æ S
+]	java:S125B"<This block of commented-out lines of code should be removed.(ËÚôþúÿÿÿÿ8áÂØôý.
+S	java:S106?"9Replace this use of System.out or System.err by a logger.(šë¢þýÿÿÿÿ
+N	java:S1064"9Replace this use of System.out or System.err by a logger.(§œÆ‚

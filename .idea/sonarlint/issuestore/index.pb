@@ -29,3 +29,7 @@ $src/com/company/handler/Handler.java,f\a\faba62f3e3e4bd9c6eab90ee79d45de3801e7
 	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
 I
 src/com/company/Main.java,4\a\4a831b10439099d44774d0ccc387e808deffaeab
+R
+"src/com/company/helper/Helper.java,d\2\d2e8aecfe527946caf6529632ae363d4787c9520
+R
+"src/com/company/models/Rating.java,2\0\207d2a07dfb486c590649980ef86290ca0ca675e
