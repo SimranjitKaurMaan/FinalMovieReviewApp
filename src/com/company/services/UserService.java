@@ -1,6 +1,7 @@
 package com.company.services;
 
 import com.company.abstractions.IUserService;
+import com.company.helper.Helper;
 import com.company.models.User;
 import com.company.utilities.Arg;
 
@@ -23,7 +24,8 @@ public class UserService implements IUserService
     @Override
     public void addUser(String userName) {
         Arg.isNotNullOrWhiteSpace(userName);
-        User user = new User(userName);
+
+        User user = Helper.createUser(userName);
         users.put(userName, user);
     }
 

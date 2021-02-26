@@ -18,12 +18,6 @@ import java.util.stream.Collectors;
 
 public class ReviewService implements IReviewService
 {
-    public static final int RATING_UPPER_BOUND = 10;
-
-    public static final int RATING_LOWER_BOUND = 1;
-
-    public static final int WEIGHTAGE = 2;
-
     private IUserService userService;
 
     private IMovieService movieService;
@@ -49,15 +43,9 @@ public class ReviewService implements IReviewService
      * @param movieRating rating given to the movie.
      */
     @Override
-    public void addReview(String userName, String movieName, Integer movieRating)
-    {
+    public void addReview(String userName, String movieName, Integer movieRating) throws ReviewException {
         Arg.isNotNullOrWhiteSpace(userName);
         Arg.isNotNullOrWhiteSpace(movieName);
-
-        if(movieRating< RATING_LOWER_BOUND || movieRating> RATING_UPPER_BOUND)
-        {
-            throw new ReviewException("The rating cannot be outside of range "+ RATING_LOWER_BOUND +"-"+ RATING_UPPER_BOUND +".");
-        }
 
         Map<String, User> users = this.userService.getUsers();
         Map<String, Movie> movies = this.movieService.getMovies();
@@ -74,21 +62,12 @@ public class ReviewService implements IReviewService
         }
         movieUserMapping.get(movieName).add(userId);
         User user = users.get(userName);
-        int reviewCount = user.getReviewCount()+1;
-        user.setReviewCount(reviewCount);
+        user.setReviewGiven(movieName);
+        Integer reviewCount = user.getReviewCount();
         if (reviewCount > 3)
-        {
-            user.setUserType(UserType.CRITIC);
-            movieRating = movieRating * WEIGHTAGE;
-        }
+        { user.setUserType(UserType.CRITIC); }
 
-        Integer movieReviewScore = movies.get(movieName).getReviewScore() + movieRating;
-        movies.get(movieName).setReviewScore(movieReviewScore);
-        if (user.getUserType()==UserType.CRITIC)
-        {
-            Integer movieCriticReviewScore = movies.get(movieName).getCriticReviewScore()+movieRating;
-            movies.get(movieName).setCriticReviewScore(movieCriticReviewScore);
-        }
+        this.movieService.getMovies().get(movieName).setReviewScore(movieRating, user.getUserType());
     }
 
     /**
@@ -97,20 +76,17 @@ public class ReviewService implements IReviewService
      * @return ReviewScore.
      */
     @Override
-    public Double getAverageReviewScoreByMovie(String movieName)
-    {
+    public Double getAverageReviewScoreByMovie(String movieName) throws ReviewException {
         Arg.isNotNullOrWhiteSpace(movieName);
 
-        Map<String,Movie> movies = this.movieService.getMovies();
-        Integer usersCount;
-        try
-        {
-            usersCount = movieUserMapping.get(movieName).size();
-
-        }catch (NullPointerException ex)
+        if(!movieUserMapping.containsKey(movieName))
         {
             throw new ReviewException("No users reviewed movie "+movieName);
         }
+
+        Map<String,Movie> movies = this.movieService.getMovies();
+
+        int usersCount = movieUserMapping.get(movieName).size();
         Integer reviewScore = movies.values()
                 .stream()
                 .filter(movie -> movie.getMovieName().equals(movieName))
@@ -128,7 +104,7 @@ public class ReviewService implements IReviewService
      * @return Review Score.
      */
     @Override
-    public Double getAverageReviewScoreByYear(Integer releaseYear)  {
+    public Double getAverageReviewScoreByYear(Integer releaseYear) throws ReviewException {
         if(releaseYear>=Year.now().getValue())
         {
             throw new ReviewException("The release year cannot be current or upcoming year.");
@@ -141,8 +117,8 @@ public class ReviewService implements IReviewService
                 .map(Movie::getReviewScore)
                 .collect(Collectors.toList());
 
-        Integer moviesCount = reviewScores.size();
-        Double totalReviewScore = reviewScores.stream().reduce(0,Integer::sum)*1.0;
+        int moviesCount = reviewScores.size();
+        double totalReviewScore = reviewScores.stream().reduce(0,Integer::sum)*1.0;
         if(moviesCount == 0)
         {
             throw new ReviewException("No movies reviewed in year "+releaseYear);
@@ -159,8 +135,7 @@ public class ReviewService implements IReviewService
      * @return List of top movie names.
      */
     @Override
-    public List<String> getTopMoviesByCriticsByGenre(String genre, Integer count)
-    {
+    public List<String> getTopMoviesByCriticsByGenre(String genre, Integer count) throws ReviewException {
         Arg.isNotNull(genre);
 
         Genre movieGenre = Genre.valueOf(genre);

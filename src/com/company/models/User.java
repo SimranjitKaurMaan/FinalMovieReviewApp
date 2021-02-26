@@ -2,6 +2,8 @@ package com.company.models;
 
 import com.company.datacontract.UserType;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class User
@@ -24,9 +26,9 @@ public class User
     private UserType userType;
 
     /**
-     * The count of reviews given by the user.
+     * The list of movie names for which user has given reviews.
      */
-    private Integer reviewCount;
+    private List<String> reviewsGiven;
 
 
     /**
@@ -37,8 +39,8 @@ public class User
     {
         this.userId = count.incrementAndGet();
         this.userName = userName;
-        this.userType = userType.VIEWER;
-        this.reviewCount = 0;
+        this.userType = UserType.VIEWER;
+        this.reviewsGiven = new ArrayList<>();
     }
 
     public int getUserId() {
@@ -49,19 +51,23 @@ public class User
         return userType;
     }
 
-    public String getUserName() {
+    public String getUserName()
+    {
         return userName;
     }
 
-    public int getReviewCount() {
-        return reviewCount;
+    public Integer getReviewCount()
+    {
+        return reviewsGiven.size();
     }
 
-    public void setReviewCount(int reviewCount) {
-        this.reviewCount = reviewCount;
+    public void setReviewGiven(String movieName)
+    {
+        this.reviewsGiven.add(movieName);
     }
 
-    public void setUserType(UserType userType) {
+    public void setUserType(UserType userType)
+    {
         this.userType = userType;
     }
 }

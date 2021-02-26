@@ -2,6 +2,7 @@ package com.company.services;
 
 import com.company.abstractions.IMovieService;
 import com.company.datacontract.Genre;
+import com.company.helper.Helper;
 import com.company.models.Movie;
 import com.company.utilities.Arg;
 
@@ -27,8 +28,7 @@ public class MovieService implements IMovieService
      * @param genres list of genres which the movie belongs to.
      */
     @Override
-    public void addMovie(String name, Integer year, List<String> genres)
-    {
+    public void addMovie(String name, Integer year, List<String> genres) {
         Arg.isNotNullOrWhiteSpace(name);
         Arg.isNotNull(genres);
 
@@ -37,7 +37,11 @@ public class MovieService implements IMovieService
             Genre movieGenre = Genre.valueOf(genre);
             movieGenres.add(movieGenre);
         });
-        Movie movie = new Movie(name, year, movieGenres);
+
+        /**
+        Movie movie = new Movie(name, year, movieGenres, this.cleaner); // if this has functions then it wont be testable.
+         **/
+        Movie movie = Helper.createMovie(name,year,movieGenres);
         movies.put(name,movie);
     }
 
